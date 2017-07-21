@@ -2,34 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'//添加
 
 
-version = "1.0"
-//android {
-//    compileSdkVersion 24
-//    buildToolsVersion "24.0.0"
-//
-//    defaultConfig {
-//        minSdkVersion 16
-//        targetSdkVersion 24
-//        versionCode 1
-//        versionName "1.0"
-//    }
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
-//    }
-//    lintOptions {
-//        abortOnError false
-//        warning 'InvalidPackage'
-//    }
-//}
 //添加
 publish {
     userOrg = 'tmac1999'//bintray.com用户名
     groupId = 'com.cnfol'//jcenter上的路径
     artifactId = 'TEHelper'//项目名称
-    publishVersion = '1.0.0'//版本号
+    publishVersion = '1.0.2'//版本号
     desc = 'Test Engineer Helper for android '//描述，不重要
     website = 'https://github.com/tmac1999/DebugShowHttpUrlDialog'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
@@ -43,8 +21,8 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -62,6 +40,5 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
