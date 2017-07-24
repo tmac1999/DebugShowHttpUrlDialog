@@ -17,7 +17,7 @@ public class ResultActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_search_dialog);
+        setContentView(R.layout.activity_result_transparent_theme);
         setTranslucentStatus(true);
         String req = getIntent().getStringExtra(EXTRA_REQUEST_TEXT);
         String resp = getIntent().getStringExtra(EXTRA_RESPONSE_TEXT);

@@ -22,6 +22,7 @@ import java.util.LinkedList;
  */
 /**
  * <li>Description: 1.0.3 增加了一个展示单个结果的透明activity
+ * 1.0.4 change name of ResultActivity layout
  * <li>Author: zhengpeng
  * <li>Date: 17/7/24 下午3:06
 */
