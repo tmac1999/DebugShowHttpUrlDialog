@@ -23,6 +23,7 @@ import java.util.LinkedList;
 /**
  * <li>Description: 1.0.3 增加了一个展示单个结果的透明activity
  * 1.0.4 change name of ResultActivity layout
+ * 1.0.5 取消单例,为了使context传递进来,使每一个activity都可以显示dialog
  * <li>Author: zhengpeng
  * <li>Date: 17/7/24 下午3:06
 */
@@ -50,10 +51,10 @@ public class ShowHttpRequestPupupWindow extends Dialog {
     private static ShowHttpRequestPupupWindow instance;
 
     public static ShowHttpRequestPupupWindow getInstance(Context context) {
-        if (instance == null) {
-            instance = new ShowHttpRequestPupupWindow(context);
-        }
-        return instance;
+//        if (instance == null) {
+//            instance = new ShowHttpRequestPupupWindow(context);
+//        }
+        return new ShowHttpRequestPupupWindow(context);//取消单例,为了使context传递进来,使每一个activity都可以显示dialog
     }
 
     private ShowHttpRequestPupupWindow(Context context) {
