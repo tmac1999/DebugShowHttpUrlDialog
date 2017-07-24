@@ -7,7 +7,7 @@ publish {
     userOrg = 'tmac1999'//bintray.com用户名
     groupId = 'com.cnfol'//jcenter上的路径
     artifactId = 'TEHelper'//项目名称
-    publishVersion = '1.0.2'//版本号
+    publishVersion = '1.0.3'//版本号
     desc = 'Test Engineer Helper for android '//描述，不重要
     website = 'https://github.com/tmac1999/DebugShowHttpUrlDialog'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
 }
@@ -21,11 +21,9 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 2
-        versionName "1.0.1"
-
+        versionCode 3
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {

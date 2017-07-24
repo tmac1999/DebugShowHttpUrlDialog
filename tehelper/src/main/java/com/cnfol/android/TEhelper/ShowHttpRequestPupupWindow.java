@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,11 @@ import java.util.LinkedList;
 /**
  * Created by mrz on 17/6/9.
  */
-
+/**
+ * <li>Description: 1.0.3 增加了一个展示单个结果的透明activity
+ * <li>Author: zhengpeng
+ * <li>Date: 17/7/24 下午3:06
+*/
 public class ShowHttpRequestPupupWindow extends Dialog {
     public static class ResponseAndResqust {
         public ResponseAndResqust(String request, String response) {
@@ -94,16 +99,19 @@ public class ShowHttpRequestPupupWindow extends Dialog {
                 View btn_copy_to_clipboard = view.findViewById(R.id.btn_copy_to_clipboard);
                 tv_request_info.setText(responseAndResqust.request);
                 tv_response_info.setText(responseAndResqust.response);
-                tv_response_info.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //// TODO: 17/7/18 show visual json activity
-                    }
-                });
                 btn_copy_to_clipboard.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         copy(responseAndResqust);
+                    }
+                });
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, ResultActivity.class);
+                        intent.putExtra(ResultActivity.EXTRA_REQUEST_TEXT,responseAndResqust.request);
+                        intent.putExtra(ResultActivity.EXTRA_RESPONSE_TEXT,responseAndResqust.response);
+                        context.startActivity(intent);
                     }
                 });
                 return view;
